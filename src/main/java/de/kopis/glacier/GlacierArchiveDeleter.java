@@ -43,6 +43,7 @@ public class GlacierArchiveDeleter extends AbstractGlacierCommand {
     client.deleteArchive(deleteRequest);
 
     log.info("Archive " + archiveId + " deletion started.");
+    System.out.format("RETURN %s deletion started.", archiveId);
   }
 
 }
