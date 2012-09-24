@@ -43,6 +43,7 @@ public class CommandLineGlacierUploader extends AbstractGlacierCommand {
       final ArchiveTransferManager atm = new ArchiveTransferManager(client, sqs, sns);
       final String archiveId = atm.upload(vaultName, uploadFile.getName(), uploadFile).getArchiveId();
       log.info("Uploaded archive " + archiveId);
+      System.out.format("RETURN %s", archiveId);
     } catch (final IOException e) {
       System.err.println("Something went wrong while uploading " + uploadFile + ".");
       e.printStackTrace();
